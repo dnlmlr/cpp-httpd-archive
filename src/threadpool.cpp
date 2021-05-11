@@ -21,6 +21,8 @@ Threadpool::Threadpool(int _numberOfWorkers, int _maxQueueBacklog)
         // is double the amount of physical cores. So on a modern machine with hyperthreading
         // the number of worker threads will be equivalent to the number of "real" cpu cores
         numberOfWorkers = std::thread::hardware_concurrency() / 2;
+
+        if (numberOfWorkers < 1) numberOfWorkers = 1;
     }
 
     if (maxQueueBacklog != DISABLE_MAX_QUEUE_BACKLOG)

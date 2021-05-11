@@ -6,6 +6,8 @@
 #include <unordered_map>
 #include <functional>
 
+#include <netinet/in.h>
+
 #include "http_err.hpp"
 #include "http_request.hpp"
 #include "http_response.hpp"
